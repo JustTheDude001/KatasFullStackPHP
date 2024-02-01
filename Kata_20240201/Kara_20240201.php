@@ -9,10 +9,13 @@
 		public int $cereals_amount = 0;
 		public int $clay_amount = 0;
 		public int $metal_amount = 0;
-		public int $development_card_amount = 0;
 		
+		public int $development_card_amount = 0;
 		public int $road_amount = 0;
 		public int $town_amount = 0;
+		public int $city_amount = 0;
+		
+		
 		
 		function __construct(string $name){
 				$this->name = $name;
@@ -68,7 +71,7 @@
 				$this->cereals_amount = $this->cereals_amount  - 2 ;
 				$this->metal_amount = $this->metal_amount - 3 ;
 
-				$this->road_amount ++;
+				$this->city_amount ++;
 
 				echo "The player " . $this->name . " has YES built a city!\n"; 
 			}else{
