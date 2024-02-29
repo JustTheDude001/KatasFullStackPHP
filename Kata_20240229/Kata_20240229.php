@@ -79,9 +79,52 @@
 		echo "\n";
 	}
 	
+	
+	
+	
+	class Factorial{
+		public int $limit;
+		public int $start = 1;
+		public  $numbers = array(1);
+		public int $counter = 0;
+		
+		public function __construct($limit){
+			$this->limit = $limit;			
+		}
+		public function factorial($counter = 0, $factRes = 1){
+			
+			if($counter == 0){
+				return;
+			}else{
+				
+				$factRes = $factRes * $counter;
+				echo $factRes . " ";
+				$counter --;
+				return $this->factorial($counter, $factRes);
+			}
+			
+			
+		}
+	
+	}
+	
+	
+	function test_factorial(){
+		$countFibo= new Factorial(5);
+		$countFibo->factorial(5);
+		echo "\n";
+		
+		$countFibo = new Factorial(3);
+		$countFibo->factorial(9);
+		echo "\n";
+	}
+	
+	
 	test_count();
 	echo "\n\n\n";
 	
 	test_fibo();
+	
+	test_factorial();
 
 ?>
