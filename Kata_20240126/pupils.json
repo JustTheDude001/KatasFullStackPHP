@@ -1,0 +1,18 @@
+{"alumnes": [
+	{
+		"nom":"nom1",
+		"cognom":"cognom1"
+	},
+	{
+		"nom":"nom2",
+		"cognom":"cognom2"
+	},
+	{
+		"nom":"nom3",
+		"cognom":"cognom3"
+	},
+	{
+		"nom":"nom4",
+		"cognom":"cognom4"
+	}
+]}

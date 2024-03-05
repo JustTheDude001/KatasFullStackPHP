@@ -23,15 +23,8 @@
 			La xifra 3 existeix dins el nombre 1453.
 			La xifra 7 NO existeix dins el nombre 1443.
 			La xifra 7 existeix dins el nombre 3772341.
-*/
+	*/
 
-
-	function exists(string $subject, string $search_string, &$matches = null): bool{
-		
-		$exists = preg_match("/".$search_string."/", $subject, $matches, PREG_OFFSET_CAPTURE);
-		return $exists;
-	}
-	
 	function existsInt(int $longInt, int $searchInt): bool{
 
 		
@@ -50,31 +43,7 @@
 	
 	}
 	
-	function checkInput(){
-		while(1){
-			$line = readline("Give a search string and a character separated by an space in order to check if the character is contained in the first string \n");
-			
-			$terms = preg_split("/[\s]+/", $line);
-			
-			if(is_array($terms)){
-				if(count($terms) > 2){
-					echo "Too many arguments given. The function only works with 2 arguments (separated by one space). \n";
-				}else if(count($terms) < 2){
-					echo "Too Few arguments given! You must give at least two arguments (separated by one space) \n";
-				}else{
-					$matches = null;
-					$exists = exists($terms[0], $terms[1], $matches);
-					
-					if($exists == 1){
-						echo "The string ". $terms[1]. " exists in the string ". $terms[0] . "\n";
-					}else{
-						echo "The string ". $terms[1]. " does NOT exists in the string ". $terms[0]. "\n";
-					}
-					
-				}
-			}
-		}
-	}
+	
 	
 	function checkInputInt(){
 		while(1){
@@ -87,14 +56,12 @@
 					echo "Too many arguments given. The function only works with 2 arguments (separated by one space). \n";
 				}else if(count($terms) < 2){
 					echo "Too Few arguments given! You must give at least two arguments (separated by one space) \n";
-	
-				
+
 				}else if(is_numeric($terms[0]) == False or is_numeric($terms[1]) == False){
 					echo "Both of the arguments MUST be integers! \n";
 				
 				}else{
-					
-					
+
 					$areInt = 0;
 					try{
 						$valOne = intval($terms[0],10);
@@ -103,8 +70,7 @@
 						
 						$matches = null;
 						$exists = existsInt($valOne, $valTwo, $matches);
-						
-						
+
 						if($exists == 1){
 							echo "The string ". $valTwo. " exists in the string ". $valOne . "\n";
 						}else{
@@ -120,9 +86,6 @@
 	}
 	
 	
-	function test_01(){
-		checkInput();
-	}
 	
 	function test_02(){
 		checkInputInt();

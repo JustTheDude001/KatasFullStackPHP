@@ -94,7 +94,7 @@
 		public function factorial($counter = 0, $factRes = 1){
 			
 			if($counter == 0){
-				return;
+				return 1;
 			}else{
 				
 				$factRes = $factRes * $counter;
