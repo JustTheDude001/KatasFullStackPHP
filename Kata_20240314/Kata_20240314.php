@@ -100,9 +100,9 @@
 	}
 	
 	function test_02(){
-		tryToNumber(NumTries, MaxTime, NumGoal, true);
+		tryToNumber(NumTries, 999999999, NumGoal, true);
 		$newGoal = rand(10,90);
-		tryToNumber(NumTries, $newGoal,$newGoal , false);
+		tryToNumber(NumTries, MaxTime,$newGoal , false);
 	}
 	test_02();
 	
