@@ -1,43 +1,5 @@
 <?php
 //https://github.com/CloudSalander/kata-train-countdown/
-
-	/*
-	//Class timer to count the time
-	class Timer extends Thread{
-		
-		public $prevTime = null;
-		public $actTime = null;
-		public $time_s = null;
-		public $countDeact = false;
-		
-		function __construct($time_s = 0){
-			$this->prevTime = time();
-			$this->time_s = $time;
-		}
-		
-		public function run(){
-			
-			$this->actTime = time();
-			while($this->actTime - $this->prevTime < $time_s && $this->countDeact == false){
-				$this->actTime = time();
-				echo $this->i;
-				sleep(1);
-			}
-			if($this->countDeact == false){
-				echo "Boooom!!!!";
-			}else{
-				echo "The boom has been deactivated on time!!!!";
-			}
-		}
-	
-	
-	}
-	
-	function test_01(){
-		$timer = new Timer(10);
-	}
-	test_01();
-	*/
 	
 	define('NumGoal', 67);
 	define('NumTries', 10);
@@ -61,7 +23,15 @@
 	}
 	
 	
-	function tryToNumber($maxTries, $maxTime,$numGoal , $showSum){
+	function numberRight($number){
+		if($newNumber > 0 && $newNumber <= 9 && is_numeric($newNumber)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	function tryToNumber($maxTries, $maxTime, $numGoal, $showSum){
 		
 		$actTries = 0;
 		$startTime = time();
@@ -70,10 +40,12 @@
 		$pendingTime = $maxTime - ($actTime - $startTime);
 		
 		echo "Give me 10 numbers in order to achieve the number ". $numGoal  . " with its sum \n";
+		
 		while($actTries < $maxTries && $actTime - $startTime < $maxTime && $sumNumbers <= $numGoal ){
+			
 			$newNumber = readline();
 			$actTime = time();
-			if($newNumber > 0 && $newNumber <= 9 && is_numeric($newNumber)){
+			if(numberRight($newNumber)){
 				$sumNumbers += (int) $newNumber;
 				
 				if($showSum == true){	
@@ -90,7 +62,7 @@
 			}
 		}
 		
-		if($sumNumbers == NumGoal){
+		if($sumNumbers == $numGoal){
 			echo "Congratulations!!!\n";
 			echo "You have deactivated the boom!!!\n";
 		}else{
