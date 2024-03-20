@@ -24,14 +24,14 @@
 	
 	
 	function numberRight($number){
-		if($newNumber > 0 && $newNumber <= 9 && is_numeric($newNumber)){
+		if($number > 0 && $number <= 9 && is_numeric($number)){
 			return true;
 		}else{
 			return false;
 		}
 	}
 	
-	function tryToNumber($maxTries, $maxTime, $numGoal, $showSum){
+	function tryToNumber( int $maxTries, int $maxTime, int $numGoal, bool $showSum){
 		
 		$actTries = 0;
 		$startTime = time();
@@ -74,7 +74,7 @@
 	function test_02(){
 		tryToNumber(NumTries, 999999999, NumGoal, true);
 		$newGoal = rand(10,90);
-		tryToNumber(NumTries, MaxTime,$newGoal , false);
+		tryToNumber(NumTries, MaxTime, $newGoal , false);
 	}
 	test_02();
 	
