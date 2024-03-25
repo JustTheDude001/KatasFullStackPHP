@@ -54,7 +54,6 @@
 					echo "Pending Time = ". $pendingTime . "\n";
 					echo "Actual Tries = ". ($actTries + 1) . "\n";
 				}else{
-					echo "                          \r\r";
 					deleteOutput();
 				}
 				
