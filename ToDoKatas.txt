@@ -2,11 +2,11 @@
 				ToDo Katas - 2024/03/20
 ************************************************************************
 ToDo - New
-1. Kata_20240314 - Count Train
+1. Kata_20240314 - Count Train [DONE]
 
 ToDo - Old
-1. Kata-Fight
+1. Kata-Fight (DONE - Ask teacher)
 
-2. Figure in Number
+2. Figure in Number 
 
 3. Activity-Volunteer

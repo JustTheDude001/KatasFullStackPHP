@@ -33,7 +33,7 @@
 			if( $longInt % 10 == $searchInt){
 				return 1;
 			}else{
-				$longInt = $longInt /10;
+				$longInt = $longInt / 10;
 				if($longInt <= 10){
 					$over = 1;
 					return 0;
@@ -47,8 +47,7 @@
 	
 	function checkInputInt(){
 		while(1){
-			$line = readline("Give a search string and a character separated by an space in order to check if the character is contained in the first string \n");
-			
+			$line = readline("Give a search string and a character separated by an space in order to check if the character is contained in the first string: \n");
 			$terms = preg_split("/[\s]+/", $line);
 			
 			if(is_array($terms)){
@@ -56,20 +55,18 @@
 					echo "Too many arguments given. The function only works with 2 arguments (separated by one space). \n";
 				}else if(count($terms) < 2){
 					echo "Too Few arguments given! You must give at least two arguments (separated by one space) \n";
-
-				}else if(is_numeric($terms[0]) == False or is_numeric($terms[1]) == False){
+				}else if(is_numeric($terms[0]) == False || is_numeric($terms[1]) == False){
 					echo "Both of the arguments MUST be integers! \n";
-				
+				}else if($terms[0] < 0 || $terms[1] < 0){
+					echo "Both of the arguments MUST be POSITIVE integers! \n";
 				}else{
-
-					$areInt = 0;
+					//WARNING  - The function does not work for Negative Numbers!!!
 					try{
 						$valOne = intval($terms[0],10);
 						$valTwo = intval($terms[1],10);
-						$areInt = 1;
 						
 						$matches = null;
-						$exists = existsInt($valOne, $valTwo, $matches);
+						$exists = existsInt($valOne, $valTwo);
 
 						if($exists == 1){
 							echo "The string ". $valTwo. " exists in the string ". $valOne . "\n";
