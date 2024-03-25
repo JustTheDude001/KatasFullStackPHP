@@ -17,8 +17,10 @@
 		
 		
 		function __construct($attack, $defense, $name = ""){
+			
 			$this->life = 10;
 			$this->name = $name;
+			
 			if($this->checkRange($attack)){
 				$this->attack = $attack;
 			}else{
@@ -38,7 +40,7 @@
 				$this->defense = rand(1,10);
 			}
 			
-			echo "Fighter was created succesfully\n";
+			echo "Fighter with name ".$this->name." was created succesfully\n";
 		}
 	
 	}
