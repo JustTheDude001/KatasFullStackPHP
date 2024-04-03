@@ -72,27 +72,33 @@
 	
 	function test_01()
 	{
-		checkIfNarcissiticNumber(1);
-		checkIfNarcissiticNumber(10);
-		checkIfNarcissiticNumber(100);
 		
-		checkIfNarcissiticNumber(7);
-		checkIfNarcissiticNumber(16);
-		checkIfNarcissiticNumber(157);
+		$values = array(
+			1,
+			10,
+			100,
+			7,
+			16,
+			157,
+			0,
+			99,
+			101,
+			10913,
+			-12340,
+			-98172,
+			0,
+			1,
+			153, 
+			371,
+			407,
+			
+		);
 		
-		checkIfNarcissiticNumber(0);
-		checkIfNarcissiticNumber(99);
-		checkIfNarcissiticNumber(101);
 		
-		checkIfNarcissiticNumber(10913);
-		checkIfNarcissiticNumber(-12340);
-		checkIfNarcissiticNumber(-98172);
+		foreach($values as $value){
+			checkIfNarcissiticNumber($value);
+		}
 		
-		checkIfNarcissiticNumber(0);
-		checkIfNarcissiticNumber(1);
-		checkIfNarcissiticNumber(153);
-		checkIfNarcissiticNumber(371);
-		checkIfNarcissiticNumber(407);
 	}
 	test_01();
 	
